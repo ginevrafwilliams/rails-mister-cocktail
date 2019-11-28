@@ -1,0 +1,17 @@
+<div class= "header">
+<h1> <%= @cocktail.name %> </h1>
+</div>
+
+<div>
+<h3>Ingredients</h3>
+<% @cocktail.doses.each do |i| %>
+<p> <%=  i.ingredient.name %> </p>
+<p> <%=  i.description %> </p>
+<% end %>
+</div>
+
+<%= link_to 'Add doses', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+
+<br>
+<%= link_to 'Back to list', cocktails_path, class: "btn btn-primary" %>
+<br>
